@@ -2,7 +2,7 @@
 
 A WordPress plugin that requires users to change their password on first login.
 
- * **Contributors:** lumpysimon, Procionegobbo, bracket-purist:master
+ * **Contributors:** lumpysimon, Procionegobbo, bracket-purist:master, grmt
  * **Tags:** password, passwords, user, users, registration, register, force, require, login, user control
  * **Requires at least:** 3.2
  * **Tested up to:** 6.2
@@ -14,7 +14,8 @@ A WordPress plugin that requires users to change their password on first login.
 This is a WordPress plugin that redirects newly-registered users to the *Admin -> Edit Profile* page when they first log in. Until they have changed their password, they will not be able to access either the front-end or other admin pages. An admin notice is also displayed informing them that they must change their password.
 
 New administrators must also change their password, but as a safety measure they can also access the *Admin -> Plugins* page.
-A checkbox in user profile allows to force a password change on a single user.
+An administrator can use a checkbox in the user profile to force a password change for the next login of a single user.
+Users that are not logged in are redirected to the login page, so also access to static pages is only allowed upon login.
 
 ## Translations included ##
 
