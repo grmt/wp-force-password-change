@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Force Password Change [with force change]
 Description:  Require users to change their password on first login.
-Version:      0.6
+Version:      0.7
 License:      GPL v2 or later
 Plugin URI:   https://github.com/lumpysimon/wp-force-password-change
 Author:       Simon Blackbourn
@@ -21,10 +21,13 @@ Domain Path:  /languages/
 	An admin notice is also displayed informing them that they must change their password.
 
 	New administrators must also change their password, but as a safety measure they can also access the Admin -> Plugins page.
+        
+	An administrator can use a checkbox in the user profile to force a password change for the next login of a single user.
+        Users that are not logged in are redirected to the login page, so access to static pages is also not allowed without login.
 
 	Please report any bugs on the WordPress support forum at http://wordpress.org/support/plugin/force-password-change or via GitHub at https://github.com/lumpysimon/wp-force-password-change/issues
 
-	Development takes place at https://github.com/lumpysimon/wp-force-password-change (all pull requests will be considered)
+	Development takes place at https://github.com/lumpysimon/wp-force-password-change (all pull requests will be considered). 
 
 
 
@@ -157,7 +160,8 @@ class force_password_change {
 		}
 
 		if ( ! is_user_logged_in() ) {
-			return;
+			wp_redirect( admin_url( 'wp-login.php'));
+			exit;
 		}
 
 		wp_get_current_user();
@@ -187,7 +191,7 @@ class force_password_change {
 	}
 
 
-//show force-password-change in user profile
+// show force-password-change in user profile
 
 	function extra_user_profile_fields( $user ) {
 		if ( get_current_user_id() != $user->ID ) {
