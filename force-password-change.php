@@ -160,7 +160,7 @@ class force_password_change {
 		}
 
 		if ( ! is_user_logged_in() ) {
-			wp_redirect( admin_url( 'wp-login.php'));
+			wp_redirect( 'wp-login.php' );
 			exit;
 		}
 
