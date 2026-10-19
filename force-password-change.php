@@ -10,6 +10,7 @@ Author URI:   https://twitter.com/lumpysimon
 Author Email: simon@lumpylemon.co.uk
 Text Domain:  force-password-change
 Domain Path:  /languages/
+Update URI:   https://github.com/grmt/wp-force-password-change
 
 
 
