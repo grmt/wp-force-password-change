@@ -1,0 +1,13 @@
+# Keeps the GitHub Actions in .github/workflows up to date. Minor and patch
+# updates come as one PR a week; majors stay separate PRs.
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directory: "/"
+  groups:
+    actions:
+      update-types: [minor, patch]
+  schedule:
+    interval: weekly
+  assignees:
+    - grmt
